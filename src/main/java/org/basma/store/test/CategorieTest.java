@@ -5,7 +5,7 @@ import org.basma.store.services.CategorieService;
 import org.basma.store.shared.dto.CategorieDto;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest; 
+import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
 public class CategorieTest {
@@ -14,9 +14,7 @@ public class CategorieTest {
 	CategorieService categorieService;
 
 	CategorieRequest categorieRequest;
- 
 
-	
 //	@Test
 //	public void addCategorie() {
 //		CategorieDto categorieDto = new CategorieDto("Exmple1");
@@ -31,7 +29,7 @@ public class CategorieTest {
 
 	@Test
 	public void updateCategorie() {
-		
+
 		CategorieDto cateDto = new CategorieDto();
 		CategorieDto categorieDto = categorieService.updateCategorie("7pqlgJu6pCdEcMtd3GoCfBdcRK392ZNk", cateDto);
 		categorieDto.setTitreCategorie("ChangeTitre");

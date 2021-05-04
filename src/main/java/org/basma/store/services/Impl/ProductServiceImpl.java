@@ -1,7 +1,7 @@
 package org.basma.store.services.Impl;
 
 import java.util.List;
- 
+
 import org.basma.store.entities.ProductEntity;
 import org.basma.store.repositories.CategorieRepository;
 import org.basma.store.repositories.ProductRepository;
@@ -67,7 +67,7 @@ public class ProductServiceImpl implements ProductService {
 
 	@Override
 	public ProductDto getProductByProductId(String idProduct) {
-		
+
 		ProductEntity productEntity = productRepository.findByProductId(idProduct);
 
 		if (productEntity == null)
@@ -82,7 +82,7 @@ public class ProductServiceImpl implements ProductService {
 
 	@Override
 	public ProductDto updateProduct(String id, ProductDto productDto) {
-		
+
 		ProductEntity productEntity = productRepository.findByProductId(id);
 
 		if (productEntity == null)
@@ -92,13 +92,13 @@ public class ProductServiceImpl implements ProductService {
 		productEntity.setDescriptionProduct(productDto.getDescriptionProduct());
 		productEntity.setQtStockProduct(productDto.getQtStockProduct());
 		productEntity.setPrixProduct(productDto.getPrixProduct());
-		
+
 		ProductEntity productUpdate = productRepository.save(productEntity);
-		
+
 		ProductDto product = new ProductDto();
-		
+
 		BeanUtils.copyProperties(productUpdate, product);
-		
+
 		return product;
 	}
 
@@ -109,7 +109,7 @@ public class ProductServiceImpl implements ProductService {
 
 		if (productEntity == null)
 			throw new UsernameNotFoundException(idProduct);
-		
+
 		productRepository.delete(productEntity);
 
 	}
